@@ -51,6 +51,10 @@ body{
     background-color: aqua;
 }
 
+.bomb-cell{
+    background-color: red;
+}
+
 button{
     border: none;
     border-radius: 1rem;

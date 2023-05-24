@@ -20,19 +20,8 @@
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
 
-function randomNumberComputer (minNumb,maxNumb,levelSelected){
 
 
-  let randomGenerator = Math.floor(Math.random() * 16 + 1);
-  let bombList = [];
-
-  while(bombList.includes){
-
-  }
-
-
-
-}
 
 
 
@@ -45,13 +34,20 @@ generateButton.addEventListener('click', function() {
 
   if (levelDifficult.value === "difficoltà 1") {
     for (let i = 1; i <= 100; i++) {
+
+      let bombCell = randomNumberComputer(1, 100);
+      bombCell.addEventListener("click",function(){
+      bombCell.classList.toggle("bomb-cell");
+      console.log("You selected a bomb cell: " ,bombCell.innerHTML);
+      });
+
       let singleCell = createElement('div', 'cell-1');
       singleCell.classList.toggle('cell-box');
       singleCell.innerHTML = i;
 
       singleCell.addEventListener('click', function() {
-        singleCell.classList.toggle('selected-cell');
-        console.log("You selected: ", singleCell.innerHTML);
+      singleCell.classList.toggle('selected-cell');
+      console.log("You selected: ", singleCell.innerHTML);
       });
 
       generateBoxCell.appendChild(singleCell);
@@ -89,4 +85,20 @@ function createElement(tagName, className) {
   const cellElement = document.createElement(tagName);
   cellElement.className = className;
   return cellElement;
+}
+
+function randomNumberComputer (minNumb,maxNumb){
+
+
+  let bombList = [];
+  let randomGenerator = Math.floor(Math.random() * (maxNumb - minNumb + 1) + minNumb);
+
+  while(bombList.length < 16){
+    if(!bombList.includes(randomGenerator)){
+      bombList.push(randomGenerator);
+    }
+  }
+
+return bombList;
+
 }
