@@ -1,0 +1,70 @@
+header{
+    background-color: white;
+    height: 70px;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+body{
+    background-color: #7fffd4;
+    height: 100vh;
+}
+
+.cell-box{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair;
+}
+.cell-1{
+    width: calc( 100% / 10);
+    height: calc( 100% / 10);
+    border: 1px solid black;
+}
+
+.cell-2{
+    width: calc( 100% / 9);
+    height: calc( 100% / 9);
+    border: 1px solid black;
+}
+
+.cell-3{
+    width: calc( 100% / 7);
+    height: calc( 100% / 7);
+    border: 1px solid black;
+}
+
+#select-level{
+    border: none;
+    border-radius: 1rem;
+    padding: 0.3rem 1.5rem;
+}
+
+.selected-cell{
+    background-color: aqua;
+}
+
+button{
+    border: none;
+    border-radius: 1rem;
+    padding: 0.3rem 1.5rem;
+}
+footer{
+    background-color: white;
+    height: 70px;
+}
+
+.cell-container{
+    height: calc(100vh - 140px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
