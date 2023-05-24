@@ -32,22 +32,23 @@ let levelDifficult = document.querySelector("#select-level");
 generateButton.addEventListener('click', function() {
   generateBoxCell.innerHTML = '';
 
+  let bombCell = getRandomUniqueNumber(1, 100, 16);
+
   if (levelDifficult.value === "difficoltà 1") {
+  
     for (let i = 1; i <= 100; i++) {
-
-      let bombCell = getRandomUniqueNumber(1, 100);
-      bombCell.addEventListener("click",function(){
-      bombCell.classList.toggle("bomb-cell");
-      console.log("You selected a bomb cell: " ,bombCell.innerHTML);
-      });
-
       let singleCell = createElement('div', 'cell-1');
       singleCell.classList.toggle('cell-box');
       singleCell.innerHTML = i;
 
       singleCell.addEventListener('click', function() {
-      singleCell.classList.toggle('selected-cell');
-      console.log("You selected: ", singleCell.innerHTML);
+        if (bombCell.includes(i)) {
+          singleCell.classList.toggle('bomb-cell');
+          console.log("You selected a bomb cell: ", singleCell.innerHTML);
+        } else {
+          singleCell.classList.toggle('selected-cell');
+          console.log("You selected: ", singleCell.innerHTML);
+        }
       });
 
       generateBoxCell.appendChild(singleCell);
@@ -59,8 +60,13 @@ generateButton.addEventListener('click', function() {
       singleCell.innerHTML = i;
 
       singleCell.addEventListener('click', function() {
-      singleCell.classList.toggle('selected-cell');
-      console.log("You selected: ", singleCell.innerHTML);
+        if (bombCell.includes(i)) {
+          singleCell.classList.toggle('bomb-cell');
+          console.log("You selected a bomb cell: ", singleCell.innerHTML);
+        } else {
+          singleCell.classList.toggle('selected-cell');
+          console.log("You selected: ", singleCell.innerHTML);
+        }
       });
 
       generateBoxCell.appendChild(singleCell);
@@ -72,8 +78,13 @@ generateButton.addEventListener('click', function() {
       singleCell.innerHTML = i;
 
       singleCell.addEventListener('click', function() {
-        singleCell.classList.toggle('selected-cell');
-        console.log("You selected: ", singleCell.innerHTML);
+        if (bombCell.includes(i)) {
+          singleCell.classList.toggle('bomb-cell');
+          console.log("You selected a bomb cell: ", singleCell.innerHTML);
+        } else {
+          singleCell.classList.toggle('selected-cell');
+          console.log("You selected: ", singleCell.innerHTML);
+        }
       });
 
       generateBoxCell.appendChild(singleCell);
